@@ -45,6 +45,11 @@ import messages from '@/utils/messages'
 
 export default {
     name: 'login',
+    metaInfo() {
+        return {
+        title: this.$title('Title_Login')
+        } 
+    },
     data: () => ({
         email: '',
         password: ''

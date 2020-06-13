@@ -29,6 +29,11 @@ import { setTimeout } from 'timers';
 
 export default {
   name: 'Home',
+  metaInfo() {
+    return {
+      title: this.$title('Title_Bill')
+    } 
+  },
   data: () => ({
     loading: true,
     currency: null

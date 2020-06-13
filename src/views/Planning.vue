@@ -38,6 +38,11 @@ import currencyFilter from '@/filters/currency.filter'
 
 export default {
   name: 'planning',
+  metaInfo() {
+    return {
+      title: this.$title('Title_Planning')
+    } 
+  },
   data: () => ({
     categories: [],
     loading: true
