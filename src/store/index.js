@@ -16,7 +16,7 @@ export default new Vuex.Store({
       state.error = error
     },
     clearError(state) {
-      state.error = null 
+      state.error = null
     }
   },
   getters: {
@@ -24,12 +24,15 @@ export default new Vuex.Store({
   },
   actions: {
     async fetchCurrency() {
-      const key = process.env.VUE_APP_FIXER;
-      const res = await fetch(`http://data.fixer.io/api/latest?access_key=${key}&symbols=USD,EUR,RUB`);
+      const key = process.env.VUE_APP_FIXER
+      const res = await fetch(`http://data.fixer.io/api/latest?access_key=${key}&symbols=USD,EUR,RUB`)
       return await res.json()
     }
   },
   modules: {
-    auth, info, category, record
+    auth,
+    info,
+    category,
+    record
   }
 })

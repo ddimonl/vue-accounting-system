@@ -22,16 +22,16 @@ import 'firebase/database'
 
 Vue.config.productionTip = false
 
-Vue.use(Vuelidate);
-Vue.use(messagePlugin);
-Vue.use(titlePlugin);
-Vue.use(VueMeta);
-Vue.filter('date', dateFilter);
-Vue.filter('currency', currencyFilter);
-Vue.filter('localize', localizeFilter);
-Vue.directive('tooltip', tooltipDirective);
-Vue.component('Loader', Loader);
-Vue.component('Paginate', Paginate);
+Vue.use(Vuelidate)
+Vue.use(messagePlugin)
+Vue.use(titlePlugin)
+Vue.use(VueMeta)
+Vue.filter('date', dateFilter)
+Vue.filter('currency', currencyFilter)
+Vue.filter('localize', localizeFilter)
+Vue.directive('tooltip', tooltipDirective)
+Vue.component('Loader', Loader)
+Vue.component('Paginate', Paginate)
 
 
 
@@ -44,13 +44,13 @@ firebase.initializeApp({
   messagingSenderId: "75835787745",
   appId: "1:75835787745:web:ea45c500fda7336026eaa0",
   measurementId: "G-5CK9M0RL2T"
-});
+})
 
 
 let app
 
 firebase.auth().onAuthStateChanged(() => {
-  if(!app) {
+  if (!app) {
     new Vue({
       router,
       store,
@@ -58,6 +58,3 @@ firebase.auth().onAuthStateChanged(() => {
     }).$mount('#app')
   }
 })
-
-
-

@@ -1,37 +1,36 @@
 <template>
-    <div>
-  <div class="page-title">
-    <h3>{{ 'ProfileTitle' | localize }}</h3>
-  </div>
+  <div>
+    <div class="page-title">
+      <h3>{{ 'ProfileTitle' | localize }}</h3>
+    </div>
 
-  <form class="form"  @submit.prevent="submitHandler">
-    <div class="input-field">
-      <input
+    <form class="form" @submit.prevent="submitHandler">
+      <div class="input-field">
+        <input
           id="description"
           type="text"
           v-model="name"
           :class="{invalid: $v.name.$dirty && !$v.name.required}"
-      >
-      <label for="description">Имя</label>
-      <span v-if="$v.name.$dirty && !$v.name.required"
-            class="helper-text invalid">Введите имя</span>
-    </div>
+        >
+        <label for="description">{{ 'Label_Name' | localize }}</label>
+        <span v-if="$v.name.$dirty && !$v.name.required" class="helper-text invalid">{{ 'Wrong_Name' | localize }}</span>
+      </div>
 
-    <div class="switch">
-    <label>
-      English
-      <input type="checkbox" v-model="isRuLocale">
-      <span class="lever"></span>
-      Русский
-    </label>
+      <div class="switch">
+        <label>
+          English
+          <input type="checkbox" v-model="isRuLocale">
+          <span class="lever"></span>
+          Русский
+        </label>
+      </div>
+
+      <button class="btn waves-effect waves-light" type="submit">
+        {{ 'Btn_Refresh' | localize }}
+        <i class="material-icons right">send</i>
+      </button>
+    </form>
   </div>
-
-    <button class="btn waves-effect waves-light" type="submit">
-      Обновить
-      <i class="material-icons right">send</i>
-    </button>
-  </form>
-</div>
 </template>
 
 
@@ -44,23 +43,23 @@ export default {
   metaInfo() {
     return {
       title: this.$title('Title_Profile')
-    } 
+    }
   },
   data: () => ({
     name: '',
     isRuLocale: true
   }),
   validations: {
-			name: {required}
+    name: { required }
   },
   mounted() {
     console.log(this.info.locale === 'ru-RU')
-    this.name = this.info.name;
+    this.name = this.info.name
     this.isRuLocale = this.info.locale === 'ru-RU'
 
     setTimeout(() => {
-				M.updateTextFields();
-			}, 0);
+      M.updateTextFields()
+    }, 0)
   },
   computed: {
     ...mapGetters(['info'])
@@ -69,8 +68,8 @@ export default {
     ...mapActions(['updateInfo']),
     async submitHandler() {
       if (this.$v.$invalid) {
-					this.$v.$touch();
-					return
+        this.$v.$touch()
+        return
       }
       
       try {
@@ -78,7 +77,8 @@ export default {
           name: this.name,
           locale: this.isRuLocale ? 'ru-RU' : 'en-US'
         })
-      } catch (e) {}
+      } catch(e) {}
+
     }
   }
 }
@@ -86,7 +86,7 @@ export default {
 
 
 <style scoped>
-  .switch {
-    margin-bottom: 2rem;
-  }
+.switch {
+  margin-bottom: 2rem;
+}
 </style>

@@ -1,10 +1,12 @@
 {
     "ProfileTitle": "Profile",
+
     "Menu_Bill": "Bill",
     "Menu_History": "History",
     "Menu_Planning": "Planning",
     "Menu_NewRecord": "New record",
     "Menu_Categories": "Categories",
+
     "Title_Profile": "Profile",
     "Title_Categories": "Categories",
     "Title_Detail": "Detail",
@@ -13,5 +15,43 @@
     "Title_Login": "Login",
     "Title_Planning": "Planning",
     "Title_Record": "Record",
-    "Title_Register": "Register"
-}
+    "Title_Register": "Register",
+
+    "Label_Name": "Name",
+    "Wrong_Name": "Enter your name",
+    "Label_Description": "Description",
+    "Wrong_Description": "Enter description",
+    "Label_Limit": "Limit",
+    "Wrong_Limit": "Enter limit",
+
+    "Btn_Exit": "Log out",
+    "Btn_Create": "Create",
+    "Btn_Refresh": "Refresh",
+
+    "createNewRecord": "New record",
+    "CurrencyAccount": "Currency account",
+    "Exchange_Rates": "Exchange rates",
+    "Currency": "Currency",
+    "Course": "Course",
+    "Date": "Date",
+    "NoRecords": "No records yet.",
+    "NoCategories": "No categories yet.",
+    "Amount": "Amount",
+    "Category": "Category",
+    "Type": "Type",
+    "Open": "Open",
+    "Outcome": "Outcome",
+    "Income": "Income",
+    "Next": "Next",
+    "Prev": "Previous",
+    "Of": "of",
+    "Edit": "Edit",
+
+    "ChooseCat": "Choose category",
+    "MinValue": "Minimal value: ",
+    "SWW": "Something went wrong.",
+
+    "Create": "Create"
+
+
+} 

@@ -13,5 +13,47 @@
     "Title_Login": "Вход",
     "Title_Planning": "Планнирование",
     "Title_Record": "Новая запись",
-    "Title_Register": "Регистрация"
-}
+    "Title_Register": "Регистрация",
+
+    "Label_Name": "Имя",
+    "Wrong_Name": "Введите имя",
+    "Label_Description": "Описание",
+    "Wrong_Description": "Введите описание",
+    "Label_Limit": "Лимит",
+    "Wrong_Limit": "Введите лимит",
+
+    "Btn_Exit": "Выйти",
+    "Btn_Create": "Создать",
+    "Btn_Refresh": "Обновить",
+
+
+    "createNewRecord": "Новая запись",
+    "CurrencyAccount": "Счет в валюте",
+    "Exchange_Rates": "Курс валют",
+    "Currency": "Валюта",
+    "Course": "Курс",
+    "Date": "Дата",
+    "NoRecords": "Записей пока нет.",
+    "NoCategories": "Категорий пока нет",
+
+    "Amount": "Сумма",
+    "Category": "Категория",
+    "Type": "Тип",
+    "Open": "Открыть",
+    "Outcome": "Расход",
+    "Income": "Доход",
+    "Next": "Вперед",
+    "Prev": "Назад",
+    "Of": "из",
+    "Edit": "Редактировать",
+
+    "ChooseCat": "Выберите категорию",
+    "MinValue": "Минимальное значение: ",
+    "SWW": "ЧТо-то пошлоо не так.",
+
+    "Create": "Создать"
+
+
+
+
+} 
