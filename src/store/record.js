@@ -33,6 +33,17 @@ import firebase from 'firebase/app'
                 commit('setError', e)
                 throw e;
             }
+        },
+        async deleteRecordById({dispatch, commit}, id) {
+            try {
+                const uid = await dispatch('getUid')
+                await firebase.database().ref(`/users/${uid}/records`).child(id).remove()
+                console.log("OK OK OK")
+                return id
+            } catch(e) {
+                commit('setError', e)
+                throw e;
+            }
         }
      }
  }

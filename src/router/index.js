@@ -82,6 +82,15 @@ const routes = [{
       layout: 'empty'
     },
     component: () => import('../views/Register.vue')
+  },
+  {
+    path: '*',
+    name: 'notfound',
+    meta: {
+      layout: 'main',
+      auth: true
+    },
+    component: () => import('../views/Home.vue')
   }
 ]
 
@@ -98,9 +107,11 @@ router.beforeEach((to, from, next) => {
 
   if (requireAuth && !currentUser) {
     next('/login/?message=login')
-  } else {
-    next()
   }
+  /* if (to.fullPath === '/login' && currentUser) {
+    next('/')
+  } */
+  next()
 })
 
 export default router

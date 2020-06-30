@@ -4,7 +4,7 @@ export default {
     data() {
         return {
             page: +this.$route.query.page || 1,
-            pageSize: 2,
+            pageSize: 3,
             pageCount: 0,
             allItems: [],
             items: []
@@ -19,6 +19,7 @@ export default {
         pageChangeHandler(page) {
             this.$router.push(`${this.$route.path}?page=${page}`)
             this.items = this.allItems[page - 1] || this.allItems[0]
+            console.log("PCH")
         }
     }
 }

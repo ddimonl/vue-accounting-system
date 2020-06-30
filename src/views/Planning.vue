@@ -17,7 +17,7 @@
           <strong>{{cat.title}}:</strong>
           {{cat.spend | currency}} {{ 'Of' | localize }} {{cat.limit | currency}}
         </p>
-        <div class="progress" v-tooltip="cat.tooltip">
+        <div class="progress" v-tooltip.noloc="cat.tooltip">
           <div
             class="determinate"
             :class="[cat.progressColor]"

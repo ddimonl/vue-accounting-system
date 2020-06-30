@@ -39,7 +39,6 @@
     "Amount": "Amount",
     "Category": "Category",
     "Type": "Type",
-    "Open": "Open",
     "Outcome": "Outcome",
     "Income": "Income",
     "Next": "Next",
@@ -51,7 +50,9 @@
     "MinValue": "Minimal value: ",
     "SWW": "Something went wrong.",
 
-    "Create": "Create"
+    "Create": "Create",
+    "Open": "Open",
+    "Delete": "Delete"
 
 
 } 

@@ -15,7 +15,7 @@
       <router-link to="/record">{{ 'createNewRecord' | localize }}</router-link>
     </p>
     <section v-else>
-      <HistoryTable :records="items"/>
+      <HistoryTable :records="items" @deleted="deleteRecord"/>
 
       <Paginate
         v-model="page"
@@ -33,7 +33,8 @@
 <script>
 import paginationMixin from '@/mixins/pagination.mixin'
 import HistoryTable from '@/components/HistoryTable'
-import { Pie } from 'vue-chartjs'
+import { Pie, mixins } from 'vue-chartjs'
+const { reactiveProp } = mixins
 import localizeFilter from '@/filters/localize.filter'
 
 export default {
@@ -50,16 +51,32 @@ export default {
   },
   data: () => ({
     loading: true,
-    records: []
+    records: [],
+    updateCount: 0,
+     categories: []
   }),
   async mounted() {
     this.records = await this.$store.dispatch('fetchRecords')
-    const categories = await this.$store.dispatch('fetchCategories')
+    this.categories = await this.$store.dispatch('fetchCategories')
 
-    this.setup(categories)
+    this.setup(this.categories)
     this.loading = false
   },
   methods: {
+    deleteRecord(deletedElId) {
+      /* this.records = this.records.filter((r) => {
+        return r.id !== deletedElementId
+      }) */
+      this.records = this.records.filter((r) => {
+        return r.id !== deletedElId
+      })
+      console.log(updatedRecords)
+      //this.items = updatedRecords
+      this.setup(this.categories)
+      console.log('deleted 2')
+      this.updateCount += 2;
+      //this.$forceUpdate();
+    },
     setup(categories) {
       this.setupPagination(
         this.records.map(record => {
