@@ -68,12 +68,7 @@ export default {
     async deleteRecord(id) {
       try {
         await this.$store.dispatch('deleteRecordById', id)
-        //emit and change parent records from Histroy.vue
-        /* const newRecords = this.records.filter((r) => {
-          return r.id !== id
-        }) */
-        console.log("deleted 1")
-        this.$emit('deleted', /* newRecords */id)
+        this.$emit('deleted', id)
         this.$message('Запись успешно удалена')
         
       } catch (e) {}

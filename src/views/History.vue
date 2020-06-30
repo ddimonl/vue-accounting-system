@@ -64,18 +64,11 @@ export default {
   },
   methods: {
     deleteRecord(deletedElId) {
-      /* this.records = this.records.filter((r) => {
-        return r.id !== deletedElementId
-      }) */
       this.records = this.records.filter((r) => {
         return r.id !== deletedElId
       })
-      console.log(updatedRecords)
-      //this.items = updatedRecords
       this.setup(this.categories)
-      console.log('deleted 2')
       this.updateCount += 2;
-      //this.$forceUpdate();
     },
     setup(categories) {
       this.setupPagination(
