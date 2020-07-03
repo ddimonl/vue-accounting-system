@@ -18,11 +18,13 @@
           {{cat.spend | currency}} {{ 'Of' | localize }} {{cat.limit | currency}}
         </p>
         <div class="progress" v-tooltip.noloc="cat.tooltip">
+          <!-- <transition name="bounce"> -->
           <div
             class="determinate"
             :class="[cat.progressColor]"
             :style="{width: cat.progressPercent + '%'}"
           ></div>
+         <!--  </transition> -->
         </div>
       </div>
     </section>
@@ -82,3 +84,22 @@ export default {
   }
 }
 </script>
+
+
+<style>
+@-webkit-keyframes progress-bar {
+   0% { width: 0; }
+}
+@-moz-keyframes progress-bar {
+   0% { width: 0; }
+}
+@keyframes progress-bar {
+   0% { width: 0; }
+}
+
+.progress > div { 
+  -webkit-animation: progress-bar 1.6s;
+  -moz-animation: progress-bar 1.6s;
+  animation: progress-bar 1.6s;
+}
+</style>

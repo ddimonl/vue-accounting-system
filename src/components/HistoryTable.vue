@@ -35,7 +35,7 @@
           <button
             v-tooltip="'Delete'"
             class="btn-small btn"
-            @click="deleteRecord(record.id)"
+            @click="deleteRecord(record)"
           >
             <i class="material-icons">delete</i>
           </button>
@@ -46,7 +46,10 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
+  name: 'history-table',
   props: {
     records: {
       required: true,
@@ -65,12 +68,17 @@ export default {
       }
       this.currentSort = sortParam
     },
-    async deleteRecord(id) {
-      try {
-        await this.$store.dispatch('deleteRecordById', id)
-        this.$emit('deleted', id)
+    async deleteRecord(record) {
+      try {    
+        await this.$store.dispatch('deleteRecordById', record.id)
+        this.$emit('deleted', record.id)
         this.$message('Запись успешно удалена')
-        
+        const bill =
+            record.type === 'income'
+              ? this.$store.getters.info.bill - record.amount
+              : this.$store.getters.info.bill + record.amount
+
+        await this.$store.dispatch('updateInfo', { bill })
       } catch (e) {}
     }
   },
